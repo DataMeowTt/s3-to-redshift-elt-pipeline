@@ -27,12 +27,6 @@ The data lake is structured into two layers:
 - Preserves raw schema and structure
 - Enables reprocessing if needed
 
-Example structure:
-s3://bucket/bronze/
-├── list_of_orders.csv
-├── order_detail.csv
-└── sales_target.csv
-
 ---
 
 ## Silver Layer (Cleaned & Optimized Zone)
@@ -41,12 +35,6 @@ s3://bucket/bronze/
 - Schema inconsistencies are resolved
 - The `list_of_orders` dataset is partitioned by **year** to optimize query performance
 - Stored in optimized format (e.g., Parquet)
-
-Example structure:
-s3://bucket/silver/list_of_orders/
-├── year=2022/
-├── year=2023/
-└── year=2024/
 
 ### Why Partition by Year?
 
